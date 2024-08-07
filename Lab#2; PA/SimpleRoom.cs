@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab_2__PA
 {
-    internal class SimpleRoom
+    internal class SimpleRoom : Rooms
     {
     }
 }
