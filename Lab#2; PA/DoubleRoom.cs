@@ -9,7 +9,7 @@ namespace Lab_2__PA
     public class DoubleRoom : Rooms
     {
         public bool Seaview { get; set; }
-        public DoubleRoom(bool seaview)
+        public DoubleRoom(int number, double pricenight, bool availability, string status, bool seaview) : base(number, pricenight, availability, status)
         {
             Seaview = seaview;
         }

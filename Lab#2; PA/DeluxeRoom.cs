@@ -9,7 +9,7 @@ namespace Lab_2__PA
     public class DeluxeRoom : Rooms
     {
         public string ExtraServices { get; set; }
-        public DeluxeRoom(string extraservices)
+        public DeluxeRoom(int number, double pricenight, bool availability, string status, string extraservices) : base(number, pricenight, availability, status)
         {
             ExtraServices = extraservices;
         }
