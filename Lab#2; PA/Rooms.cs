@@ -24,6 +24,28 @@ namespace Lab_2__PA
             int infoMenuOption = int.Parse(Console.ReadLine());
             return infoMenuOption;
         }
+        public static void SwitchMenuInfo(ref List<Rooms> roomsList)
+        {
+            switch (ShowMenuInfo())
+            {
+                case 1:
+                    SimpleRoomInfo(ref roomsList);
+                    break;
+                case 2:
+                    DoubleRoomInfo(ref roomsList);
+                    break;
+                case 3:
+                    SuitesInfo(ref roomsList);
+                    break;
+                case 4:
+                    DeluxeRoomInfo(ref roomsList);
+                    break;
+                case 5:
+                    break;
+                default:
+                    break;
+            }
+        }
         public static void SimpleRoomInfo(ref List<Rooms> roomsList)
         {
             Console.WriteLine("Habitaciones Simples");
@@ -67,7 +89,7 @@ namespace Lab_2__PA
             }
             Console.ReadKey();
         }
-        public static void DeluxeRoom(ref List<Rooms> roomsList)
+        public static void DeluxeRoomInfo(ref List<Rooms> roomsList)
         {
             Console.WriteLine("Habitaciones Deluxe");
             foreach (DeluxeRoom deluxeRoom in roomsList)
