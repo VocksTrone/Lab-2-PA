@@ -24,26 +24,32 @@ namespace Lab_2__PA
             int infoMenuOption = int.Parse(Console.ReadLine());
             return infoMenuOption;
         }
-        public static void SwitchMenuInfo(ref List<Rooms> roomsList)
+        public static void SwitchMenuInfo(ref List<Rooms> roomsList, bool infoContinue)
         {
-            switch (ShowMenuInfo())
+            while (infoContinue = true)
             {
-                case 1:
-                    SimpleRoomInfo(ref roomsList);
-                    break;
-                case 2:
-                    DoubleRoomInfo(ref roomsList);
-                    break;
-                case 3:
-                    SuitesInfo(ref roomsList);
-                    break;
-                case 4:
-                    DeluxeRoomInfo(ref roomsList);
-                    break;
-                case 5:
-                    break;
-                default:
-                    break;
+                switch (ShowMenuInfo())
+                {
+                    case 1:
+                        SimpleRoomInfo(ref roomsList);
+                        break;
+                    case 2:
+                        DoubleRoomInfo(ref roomsList);
+                        break;
+                    case 3:
+                        SuitesInfo(ref roomsList);
+                        break;
+                    case 4:
+                        DeluxeRoomInfo(ref roomsList);
+                        break;
+                    case 5:
+                        infoContinue = false;
+                        break;
+                    default:
+                        Console.WriteLine("Seleccione una Opción Válida (1 - 5)");
+                        Console.ReadKey();
+                        break;
+                } 
             }
         }
         public static void SimpleRoomInfo(ref List<Rooms> roomsList)
