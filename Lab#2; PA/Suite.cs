@@ -15,5 +15,11 @@ namespace Lab_2__PA
             NumberRooms = numberrooms;
             Jacuzzi = jacuzzi;
         }
+        public override void ShowRoom()
+        {
+            base.ShowRoom();
+            Console.WriteLine($"Número de Habitaciones: {NumberRooms}");
+            Console.WriteLine($"Jacuzzi: {MaskIncluides(Jacuzzi)}");
+        }
     }
 }

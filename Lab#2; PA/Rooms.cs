@@ -110,7 +110,7 @@ namespace Lab_2__PA
                                         break;
                                     case 2:
                                         typeRoom = "\nHabitación Doble";
-                                        Console.Write("Vista al Mar (Incluido / No Incluido): ");
+                                        Console.Write("\nVista al Mar (Incluido / No Incluido): ");
                                         string seaview = Console.ReadLine();
                                         roomsList.Add(new DoubleRoom(numberRoom, priceRoom, true, "", typeRoom, MaskIncluidesBool(seaview)));
                                         Console.WriteLine($"\nLa Habitación {numberRoom} fue Añadida con Éxito");
@@ -118,9 +118,9 @@ namespace Lab_2__PA
                                         break;
                                     case 3:
                                         typeRoom = "\nSuite";
-                                        Console.Write("Número de Habitaciones: ");
+                                        Console.Write("\nNúmero de Habitaciones: ");
                                         int roomsNumber = int.Parse(Console.ReadLine());
-                                        Console.Write("Jacuzzi (Incluido / No Incluido): ");
+                                        Console.Write("\nJacuzzi (Incluido / No Incluido): ");
                                         string jacuzzi = Console.ReadLine();
                                         roomsList.Add(new Suite(numberRoom, priceRoom, true, "", typeRoom, roomsNumber, MaskIncluidesBool(jacuzzi)));
                                         Console.WriteLine($"\nLa Habitación {numberRoom} fue Añadida con Éxito");
@@ -128,7 +128,7 @@ namespace Lab_2__PA
                                         break;
                                     case 4:
                                         typeRoom = "\nHabitación Deluxe";
-                                        Console.Write("Servicios: ");
+                                        Console.Write("\nServicios: ");
                                         string services = Console.ReadLine();
                                         roomsList.Add(new DeluxeRoom(numberRoom, priceRoom, true, "", typeRoom, services));
                                         Console.WriteLine($"\nLa Habitación {numberRoom} fue Añadida con Éxito");
@@ -157,6 +157,31 @@ namespace Lab_2__PA
             catch (FormatException)
             {
                 Console.WriteLine("\nERROR!, Datos Inválidos");
+                Console.ReadKey();
+            }
+        }
+        public virtual void ShowRoom()
+        {
+            Console.WriteLine($"Habitación No. {Number}");
+            Console.WriteLine($"Precio: {PriceNight}");
+            Console.WriteLine($"Disponibilidad: {Availability}");
+            Console.WriteLine($"Estado: {Status}");
+            Console.WriteLine($"Tipo: {Type}");
+            Console.ReadKey();
+        }
+        public void ShowAllRooms(List<Rooms> roomsList)
+        {
+            if (roomsList.Count == 0)
+            {
+                Console.WriteLine("No Existen Habitaciones Registradas");
+                Console.ReadKey();
+            }
+            else
+            {
+                foreach (var room in roomsList)
+                {
+                    room.ShowRoom();
+                }
                 Console.ReadKey();
             }
         }

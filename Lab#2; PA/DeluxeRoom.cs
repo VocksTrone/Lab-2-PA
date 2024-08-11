@@ -13,5 +13,10 @@ namespace Lab_2__PA
         {
             ExtraServices = extraservices;
         }
+        public override void ShowRoom()
+        {
+            base.ShowRoom();
+            Console.WriteLine($"Servicios: {ExtraServices}");
+        }
     }
 }

@@ -13,5 +13,10 @@ namespace Lab_2__PA
         {
             BedQuantity = bedquantity;
         }
+        public override void ShowRoom()
+        {
+            base.ShowRoom();
+            Console.WriteLine($"Número de Camas: {BedQuantity}");
+        }
     }
 }

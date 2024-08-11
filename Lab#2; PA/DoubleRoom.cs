@@ -13,5 +13,10 @@ namespace Lab_2__PA
         {
             Seaview = seaview;
         }
+        public override void ShowRoom()
+        {
+            base.ShowRoom();
+            Console.WriteLine($"Vista al Mar: {MaskIncluides(Seaview)}");
+        }
     }
 }
