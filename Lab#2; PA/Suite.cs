@@ -10,7 +10,7 @@ namespace Lab_2__PA
     {
         public int NumberRooms { get; set; }
         public bool Jacuzzi { get; set; }
-        public Suite(int number, double pricenight, bool availability, string status, int numberrooms, bool jacuzzi) : base(number, pricenight, availability, status) 
+        public Suite(int number, double pricenight, bool availability, string status, string type, int numberrooms, bool jacuzzi) : base(number, pricenight, availability, status, type) 
         {
             NumberRooms = numberrooms;
             Jacuzzi = jacuzzi;

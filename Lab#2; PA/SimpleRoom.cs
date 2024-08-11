@@ -9,7 +9,7 @@ namespace Lab_2__PA
     public class SimpleRoom : Rooms
     {
         public int BedQuantity { get; set; }
-        public SimpleRoom(int number, double pricenight, bool availability, string status, int bedquantity) : base(number, pricenight, availability, status)
+        public SimpleRoom(int number, double pricenight, bool availability, string status, string type, int bedquantity) : base(number, pricenight, availability, status, type)
         {
             BedQuantity = bedquantity;
         }
