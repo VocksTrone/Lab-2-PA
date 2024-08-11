@@ -55,5 +55,16 @@ namespace Lab_2__PA
                 return false;
             }
         }
+        public int RoomsMenu()
+        {
+            Console.WriteLine("Tipos de Habitaciones");
+            Console.WriteLine("1. Habitación Simple");
+            Console.WriteLine("2. Habitación Doble");
+            Console.WriteLine("3. Suite");
+            Console.WriteLine("4. Habitación Deluxe");
+            Console.Write("Ingrese una Opción: ");
+            int optionRoomsMenu = int.Parse(Console.ReadLine());
+            return optionRoomsMenu;
+        }
     }
 }
