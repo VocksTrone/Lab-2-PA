@@ -22,5 +22,38 @@ namespace Lab_2__PA
             Status = status;
             Type = type;
         }
+        public string MaskAvailability(bool availability)
+        {
+            if (availability == true)
+            {
+                return "Disponible";
+            }
+            else
+            {
+                return "No Disponible";
+            }
+        }
+        public string MaskIncluides(bool incluidesText)
+        {
+            if (incluidesText == true)
+            {
+                return "Incluido";
+            }
+            else
+            {
+                return "No Incluido";
+            }
+        }
+        public bool MaskIncluidesBool(string incluidesText)
+        {
+            if (incluidesText == "Incluido")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
