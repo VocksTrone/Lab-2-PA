@@ -173,7 +173,7 @@ namespace Lab_2__PA
         {
             if (roomsList.Count == 0)
             {
-                Console.WriteLine("No Existen Habitaciones Registradas");
+                Console.WriteLine("\nNo Existen Habitaciones Registradas");
                 Console.ReadKey();
             }
             else
@@ -188,42 +188,84 @@ namespace Lab_2__PA
         }
         public void AssignRoom(List<Rooms> roomsList)
         {
-            Console.Write ("Número de Habitación: ");
-            int numberRoom = int.Parse(Console.ReadLine());
-            Rooms roomNumber = roomsList.Find(p => p.Number == numberRoom);
-            if (roomNumber != null)
+            if (roomsList.Count == 0)
             {
-                Console.Write("\nCliente: ");
-                string customer = Console.ReadLine();
-                roomNumber.Status = "";
-                roomNumber.Availability = false;
-                Console.WriteLine("\nCliente Añadido Exitosamente");
+                Console.WriteLine("\nNo Existen Habitaciones Registradas");
                 Console.ReadKey();
-                
             }
             else
             {
-                Console.WriteLine("\nLa Habitación No Existe");
-                Console.ReadKey();
+                Console.Write("\nNúmero de Habitación: ");
+                int numberRoom = int.Parse(Console.ReadLine());
+                Rooms roomNumber = roomsList.Find(p => p.Number == numberRoom);
+                if (roomNumber != null)
+                {
+                    Console.Write("\nCliente: ");
+                    string customer = Console.ReadLine();
+                    roomNumber.Status = "";
+                    roomNumber.Availability = false;
+                    Console.WriteLine("\nCliente Añadido Exitosamente");
+                    Console.ReadKey();
+
+                }
+                else
+                {
+                    Console.WriteLine("\nLa Habitación No Existe");
+                    Console.ReadKey();
+                }
             }
         }
         public void FreeRoom(List<Rooms> roomsList)
         {
-            Console.Write("Número de Habitación: ");
-            int numberRoom = int.Parse(Console.ReadLine());
-            Rooms roomNumber = roomsList.Find(p => p.Number == numberRoom);
-            if (roomNumber != null)
+            if (roomsList.Count == 0)
             {
-                roomNumber.Status = "";
-                roomNumber.Availability = true;
-                Console.WriteLine("\nHabitación Liberada Exitosamente");
+                Console.WriteLine("\nNo Existen Habitaciones Registradas");
                 Console.ReadKey();
-
             }
             else
             {
-                Console.WriteLine("\nLa Habitación No Existe");
+                Console.Write("\nNúmero de Habitación: ");
+                int numberRoom = int.Parse(Console.ReadLine());
+                Rooms roomNumber = roomsList.Find(p => p.Number == numberRoom);
+                if (roomNumber != null)
+                {
+                    roomNumber.Status = "";
+                    roomNumber.Availability = true;
+                    Console.WriteLine("\nHabitación Liberada Exitosamente");
+                    Console.ReadKey();
+
+                }
+                else
+                {
+                    Console.WriteLine("\nLa Habitación No Existe");
+                    Console.ReadKey();
+                }
+            }
+        }
+        public void DeleteRoom(List<Rooms> roomsList)
+        {
+            if (roomsList.Count == 0)
+            {
+                Console.WriteLine("\nNo Existen Habitaciones Registradas");
                 Console.ReadKey();
+            }
+            else
+            {
+                Console.Write("\nNúmero de Habitación: ");
+                int numberRoom = int.Parse(Console.ReadLine());
+                Rooms roomNumber = roomsList.Find(p => p.Number == numberRoom);
+                if (roomNumber != null)
+                {
+                    roomsList.Remove(roomNumber);
+                    Console.WriteLine("\nHabitación Eliminada Exitosamente");
+                    Console.ReadKey();
+
+                }
+                else
+                {
+                    Console.WriteLine("\nLa Habitación No Existe");
+                    Console.ReadKey();
+                }
             }
         }
     }
