@@ -181,7 +181,29 @@ namespace Lab_2__PA
                 foreach (var room in roomsList)
                 {
                     room.ShowRoom();
+                    Console.WriteLine("");
                 }
+                Console.ReadKey();
+            }
+        }
+        public void AssignRoom(List<Rooms> roomsList)
+        {
+            Console.Write ("Número de Habitación: ");
+            int numberRoom = int.Parse(Console.ReadLine());
+            Rooms roomNumber = roomsList.Find(p => p.Number == numberRoom);
+            if (roomNumber != null)
+            {
+                Console.Write("\nCliente: ");
+                string customer = Console.ReadLine();
+                roomNumber.Status = "";
+                roomNumber.Availability = false;
+                Console.WriteLine("\nCliente Añadido Exitosamente");
+                Console.ReadKey();
+                
+            }
+            else
+            {
+                Console.WriteLine("\nLa Habitación No Existe");
                 Console.ReadKey();
             }
         }
