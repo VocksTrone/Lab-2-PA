@@ -207,5 +207,24 @@ namespace Lab_2__PA
                 Console.ReadKey();
             }
         }
+        public void FreeRoom(List<Rooms> roomsList)
+        {
+            Console.Write("Número de Habitación: ");
+            int numberRoom = int.Parse(Console.ReadLine());
+            Rooms roomNumber = roomsList.Find(p => p.Number == numberRoom);
+            if (roomNumber != null)
+            {
+                roomNumber.Status = "";
+                roomNumber.Availability = true;
+                Console.WriteLine("\nHabitación Liberada Exitosamente");
+                Console.ReadKey();
+
+            }
+            else
+            {
+                Console.WriteLine("\nLa Habitación No Existe");
+                Console.ReadKey();
+            }
+        }
     }
 }
