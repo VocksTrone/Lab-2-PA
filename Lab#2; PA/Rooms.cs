@@ -22,7 +22,7 @@ namespace Lab_2__PA
             Status = status;
             Type = type;
         }
-        public string MaskAvailability(bool availability)
+        public static string MaskAvailability(bool availability)
         {
             if (availability == true)
             {
@@ -33,7 +33,7 @@ namespace Lab_2__PA
                 return "No Disponible";
             }
         }
-        public string MaskIncluides(bool incluidesText)
+        public static string MaskIncluides(bool incluidesText)
         {
             if (incluidesText == true)
             {
@@ -44,7 +44,7 @@ namespace Lab_2__PA
                 return "No Incluido";
             }
         }
-        public bool MaskIncluidesBool(string incluidesText)
+        public static bool MaskIncluidesBool(string incluidesText)
         {
             if (incluidesText.Trim().ToLower().Equals("incluido"))
             {
@@ -55,7 +55,7 @@ namespace Lab_2__PA
                 return false;
             }
         }
-        public int RoomsMenu()
+        public static int RoomsMenu()
         {
             Console.WriteLine("Tipos de Habitaciones");
             Console.WriteLine("\n1. Habitación Simple");
@@ -66,7 +66,7 @@ namespace Lab_2__PA
             int optionRoomsMenu = int.Parse(Console.ReadLine());
             return optionRoomsMenu;
         }
-        public void AddRoom(List<Rooms> roomsList, int numberRoom, double priceRoom, int bedsRoom)
+        public static void AddRoom(List<Rooms> roomsList, int numberRoom, double priceRoom, int bedsRoom)
         {
             try
             {
@@ -169,7 +169,7 @@ namespace Lab_2__PA
             Console.WriteLine($"Tipo: {Type}");
             Console.ReadKey();
         }
-        public void ShowAllRooms(List<Rooms> roomsList)
+        public static void ShowAllRooms(List<Rooms> roomsList)
         {
             if (roomsList.Count == 0)
             {
@@ -186,7 +186,7 @@ namespace Lab_2__PA
                 Console.ReadKey();
             }
         }
-        public void AssignRoom(List<Rooms> roomsList)
+        public static void AssignRoom(List<Rooms> roomsList)
         {
             if (roomsList.Count == 0)
             {
@@ -215,7 +215,7 @@ namespace Lab_2__PA
                 }
             }
         }
-        public void FreeRoom(List<Rooms> roomsList)
+        public static void FreeRoom(List<Rooms> roomsList)
         {
             if (roomsList.Count == 0)
             {
@@ -242,7 +242,7 @@ namespace Lab_2__PA
                 }
             }
         }
-        public void DeleteRoom(List<Rooms> roomsList)
+        public static void DeleteRoom(List<Rooms> roomsList)
         {
             if (roomsList.Count == 0)
             {
