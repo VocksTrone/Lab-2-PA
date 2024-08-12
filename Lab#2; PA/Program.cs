@@ -1,5 +1,5 @@
 ﻿using Lab_2__PA;
-bool generalContinue = false; int numberRoom; double priceRoom; int bedsRoom;
+bool generalContinue = false; int numberRoom = default; double priceRoom = default; int bedsRoom = default;
 List <Rooms> roomsList = new List <Rooms>();
 
 while (generalContinue)
@@ -35,12 +35,12 @@ static bool GoOut(ref bool generalContinue)
     generalContinue = false;
     return generalContinue;
 }
-static void SwitchMenu(ref List<Rooms> roomsList, ref bool generalContinue)
+ void SwitchMenu(ref List<Rooms> roomsList, ref bool generalContinue)
 {
     switch (ShowMenu())
     {
         case 1:
-            Rooms.AddRoom(ref roomsList);
+            Rooms.AddRoom(roomsList, ref numberRoom, ref priceRoom, ref bedsRoom);
             break;
         case 2:
             Rooms.AssignRoom(roomsList);

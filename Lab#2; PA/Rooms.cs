@@ -66,7 +66,7 @@ namespace Lab_2__PA
             int optionRoomsMenu = int.Parse(Console.ReadLine());
             return optionRoomsMenu;
         }
-        public static void AddRoom(List<Rooms> roomsList, int numberRoom, double priceRoom, int bedsRoom)
+        public static void AddRoom(List<Rooms> roomsList, ref int numberRoom, ref double priceRoom, ref int bedsRoom)
         {
             try
             {
